@@ -1,3 +1,3 @@
 function alertButton() {
-    alert("hello friends <3");
+    alert("thank you for the click friend :)");
 };
