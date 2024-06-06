@@ -1,4 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Horizontal from '../components/Horizontal.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
 	title: string;
 }
@@ -10,40 +14,33 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="gayfro.gs" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header />
+		<Horizontal />
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: 249, 92, 179;
+		--accent-light: 249, 92, 179;
+		--accent-dark: 249, 92, 179;
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		--gaydient: linear-gradient(
-			45deg,
-			rgb(255, 1, 23),
-			rgb(255, 122, 1),
-			rgb(254, 240, 6),
-			rgb(36, 255, 11),
-			rgb(0, 250, 247),
-			rgb(81, 1, 255),
-		)
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #190E1E;
 		background-size: 224px;
 	}
 	code {
@@ -56,5 +53,22 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	p > emphasis {
+		color: #F95CB3;
+		font-weight: bold;
+	}
+	p > quiet {
+		color: #b3a3aa;
+		font-style: italic;
+		font-size: 80%;
+	}
+	a {
+		color: #f581f5;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
 	}
 </style>

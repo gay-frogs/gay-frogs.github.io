@@ -1,0 +1,65 @@
+---
+interface Props { }
+
+const { } = Astro.props;
+---
+
+<!-- HEADER CLASS -->
+<header>
+	<h1>
+		gayfrogs
+	</h1>
+	<nav class="navbar">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="/writings">writings</a></li>
+			<li><a href="/contact">contact</a></li>
+			<li><a href="/test">test</a></li>
+		</ul>
+	</nav>
+</header>
+
+<!-- HEADER STYLING -->
+<style>
+	.navbar ul {
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+	}
+	.navbar a {
+		font-weight: bold;
+		color: #ffffff;
+		text-decoration: none;
+		padding: 0px 10px;
+		display: block;
+		text-align: center;
+	}
+
+	.navbar a:hover{
+		text-decoration: underline;
+	}
+
+	.navbar li {
+		float: left;
+	}
+
+	.navbar li:not(:last-child) { 
+		border-right:solid 1px #ffffff;/* This will not give border to last li element */
+	}
+	h1 {
+		color: rgb(var(--accent));
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+	}
+	h1, header, navbar, .h1, .header, .navbar, .navbar ul {
+		padding: 0.3rem;
+		margin: 0;
+		border: 0;
+	}
+	.h1:hover {
+		color: #ffffff;
+	}
+</style>
