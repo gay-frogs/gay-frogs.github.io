@@ -6,8 +6,10 @@ import startpage from '../../assets/images/start/startpage.png';
 <div class="Container">
 	<div class="Searchbar">
 		<input
+			id="search"
 			type="search"
 			placeholder="Search the web"
+			autofocus
 		/>
 		<img
 			src={startpage.src}
@@ -15,6 +17,21 @@ import startpage from '../../assets/images/start/startpage.png';
 		/>
 	</div>
 </div>
+<script>
+	const search = (document.getElementById("search")! as HTMLInputElement)
+	search.addEventListener('keydown', function onEvent(event) {
+		if (event.key === "Enter") {
+			const query = search.value;
+			const searchQuery = encodeURI(query);
+			if (searchQuery.length <= 1) {
+				return
+			}
+			try {
+				window.location.href = ("https://www.startpage.com/sp/search?query=" + searchQuery);
+			} catch (e){}
+		}
+	});
+</script>
 
 
 <style>
