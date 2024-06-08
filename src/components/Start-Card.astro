@@ -1,0 +1,64 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<li class="start-card">
+	<h2>
+		~/Social
+	</h2>
+	<a href="https://google.com">Discord</a>
+	<a href="https://google.com">Bluesky</a>
+	<a href="https://google.com">Tumblr</a>
+	<a href="https://google.com">Reddit</a>
+</li>
+<style>
+
+	/*------------- IMPORT UBUNTU MONO -------------*/
+	@import url(start/UbuntuMono.css);
+
+	
+	.start-card {
+		list-style: none;
+		display: flex;
+		padding: 1px;
+		flex-direction: column;
+		padding: 1.1rem;
+		gap: 1.0rem;
+	}
+
+
+
+	/*------------- CATEGORY HEADER -------------*/
+	.start-card > h2 {
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		margin: 0;
+		font-size: 1.25rem;
+		color: rgb(228, 196, 255);
+	}
+
+	/*------------- LINKS -------------*/
+	.start-card > a {
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		width: 100%;
+		text-decoration: none;
+		line-height: 1;
+		border-radius: 8px;
+		color: rgb(196, 196, 196);
+		opacity: 0.8;
+	}
+	.start-card > a:hover, .start-card > a:active {
+		text-decoration: underline;
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+</style>

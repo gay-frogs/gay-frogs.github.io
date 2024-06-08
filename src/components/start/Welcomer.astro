@@ -1,0 +1,39 @@
+---
+interface Props {
+	msg: string;
+}
+
+const { msg } = Astro.props;
+---
+
+
+<div class="Welcomer">
+	<h1>
+		{msg}
+	</h1>
+</div>
+
+
+<style>
+	/*------------- IMPORT UBUNTU MONO -------------*/
+	@import url(UbuntuMono.css);
+	@import url(Theme.css);
+
+	/*------------- WELCOMER -------------*/
+	.Welcomer {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/*------------- WELCOME MESSAGE -------------*/
+	.Welcomer > h1 {
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 2.5rem;
+		color: var(--main-text);
+		margin: 0;
+		text-align: center;
+	}
+</style>

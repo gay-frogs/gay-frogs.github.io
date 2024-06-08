@@ -1,14 +1,53 @@
 ---
+import Lain from '../assets/images/start/lain.png';
 ---
-<div class="startBox">
-	<p>hello, world!</p>
+<div class="start-box">
+	<img
+		src={Lain.src}
+		alt="an image of lain"
+		aspect-ratio=1/1
+		height=100%
+		width=auto
+	/>
+	<div class="main-container">
+		<h1>
+			Hello, world
+		</h1>
+		<div class="search-bar">
+			
+		</div>
+	</div>
 </div>
 <style>
-	.startBox {
+	.start-box {
 		margin: auto;
-		width: 800px;
+		width: 1000px;
 		height: 300px;
 		color: #0C1F2C;
 		border: 1px solid #356F8B;
+		overflow: hidden;
+		display: flex;
+	}
+	.main-container {
+		width: 100%;
+		flex-direction: column;
+		padding: 1.5rem;
+		gap: 1.5rem;
+		display: flex;
+		overflow: hidden;
+	}
+	.search-bar {
+		display: flex;
+		-moz-box-align: center;
+		align-items: center;
+	}
+	h1 {
+		color: #356F8B;
+		font-size: calc(1.5rem);
+		font-weight: 500;
+		margin: 0px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow-x: hidden;
 	}
 </style>

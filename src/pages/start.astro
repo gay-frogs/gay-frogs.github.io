@@ -1,11 +1,67 @@
 ---
 import Layout from '../layouts/StartPage.astro';
-import Card from '../components/Card.astro';
 import StartBox from '../components/StartBox.astro';
+import Welcomer from '../components/start/Welcomer.astro';
+import Searchbar from '../components/start/Searchbar.astro';
+import CardSet from '../components/start/CardSet.astro';
+import BookmarkCard from '../components/start/BookmarkCard.astro';
 ---
 
 <Layout title="sara's place">
 	<main>
-		<StartBox />
+		<Welcomer msg="hello, world_" />
+		<Searchbar />
+		<div class="CardSet">
+			<BookmarkCard title="home"
+				link1 = "https://proton.me/"
+				link2= "https://mail.google.com"
+				link3 = "https://youtube.com/"
+				link4 = "https://gayfro.gs/"
+				title1 = "proton"
+				title2 = "gmail"
+				title3 = "youtube"
+				title4 = "my site"
+			/>
+			<BookmarkCard title="code"
+				link1 = "https://github.com"
+				link2= "https://developer.mozilla.org/en-US/"
+				link3 = "https://wiki.archlinux.org/"
+				link4 = "https://stackoverflow.com/"
+				title1 = "github"
+				title2 = "mozilla developer"
+				title3 = "archwiki"
+				title4 = "stack overflow"
+			/>
+			<BookmarkCard title="social"
+				link1 = "https://discord.com/"
+				link2 = "https://bsky.app"
+				link3= "https://tumblr.com"
+				link4 = "https://reddit.com"
+				title1 = "discord"
+				title2 = "bluesky"
+				title3 = "instagram"
+				title4 = "reddit"
+			/>
+		</div>
 	</main>
 </Layout>
+
+<style>
+	.CardSet {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 100%;
+		height: auto;
+	}
+	main {
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-content: center;
+		display: flex;
+		flex-direction: column;
+		gap: 1.0rem;
+	}
+</style>

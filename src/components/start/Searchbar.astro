@@ -1,0 +1,71 @@
+---
+import startpage from '../../assets/images/start/startpage.png';
+---
+
+
+<div class="Container">
+	<div class="Searchbar">
+		<input
+			type="search"
+			placeholder="Search the web"
+		/>
+		<img
+			src={startpage.src}
+			alt="Startpage search engine logo"
+		/>
+	</div>
+</div>
+
+
+<style>
+	/*------------- IMPORT UBUNTU MONO -------------*/
+	@import url(UbuntuMono.css);
+	@import url(Theme.css);
+
+	/*------------- SEARCHBAR -------------*/
+	.Container {
+		width: 100%;
+		height: 2.5rem;
+		justify-content: center;
+		align-content: center;
+	}
+	.Searchbar {
+		list-style: none;
+		display: flex;
+		width: 30rem;
+		height: 2.5rem;
+		border-radius: 1.25rem;
+		background-color: var(--searchbar-bg);
+		margin: 0 auto;
+	}
+
+	/*------------- WELCOME MESSAGE -------------*/
+	.Searchbar > h1 {
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 2.5rem;
+		color: var(--link-text);
+		margin: 0;
+	}
+	.Searchbar > img {
+		padding:0.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		position: absolute
+	}
+	.Searchbar > input {
+		color: #c7bfc5;
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 1.0rem;
+		width: 100%;
+		height: 100%;
+		padding: 0.5rem;
+		padding-left: 2.75rem;
+		background-color: rgba(0,0,0,0);
+		border-width: 0px;
+		border-radius: 1.25rem;
+	}
+</style>

@@ -1,0 +1,67 @@
+---
+import { string } from 'astro/zod';
+
+interface Props {
+	title: string;
+	link1: string;
+	link2: string;
+	link3: string;
+	link4: string;
+	title1: string;
+	title2: string;
+	title3: string;
+	title4: string;
+}
+
+const { title, link1, link2, link3, link4, title1, title2, title3, title4 } = Astro.props;
+---
+
+
+<div class="BookmarkCard">
+	<h2>
+		~/{title}
+	</h2>
+	<a href={link1}>{title1}</a>
+	<a href={link2}>{title2}</a>
+	<a href={link3}>{title3}</a>
+	<a href={link4}>{title4}</a>
+</div>
+
+
+<style>
+	/*------------- IMPORT UBUNTU MONO -------------*/
+	@import url(UbuntuMono.css);
+	@import url(Theme.css);
+
+	/*------------- BOOKMARK CARD -------------*/
+	.BookmarkCard {
+		list-style: none;
+		display: flex;
+		flex-direction:column;
+		background-color: rgba(0,0,0,0);
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	/*------------- BOOKMARK CARD TITLE -------------*/
+	.BookmarkCard > h2 {
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 1.5rem;
+		color: var(--main-text);
+		margin: 0;
+	}
+
+	/*------------- LINKS -------------*/
+	.BookmarkCard > a {
+		padding: 0.25rem;
+		padding-left: 1.0rem;
+		font-family: 'UbuntuMono', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 1.0rem;
+		color: var(--link-text);
+		margin: 0;
+	}
+</style>
