@@ -22,6 +22,11 @@ import startpage from '../../assets/images/start/startpage.png';
 	search.addEventListener('keydown', function onEvent(event) {
 		if (event.key === "Enter") {
 			const query = search.value;
+			const url = getURL(query);
+			if (url != null) {
+				window.location.href = url;
+				return;
+			}
 			const searchQuery = encodeURI(query);
 			if (searchQuery.length <= 1) {
 				return
@@ -31,6 +36,20 @@ import startpage from '../../assets/images/start/startpage.png';
 			} catch (e){}
 		}
 	});
+	function getURL(query: string) {
+		let url;
+		if (query.includes('.') && !query.includes(' ')) {
+			try {
+				url = (new URL(query)).href;
+				return url;
+			} catch (_) { }
+			try {
+				url = (new URL("https://" + query)).href;
+				return url;
+			} catch (_) { }
+		}
+		return url;
+	}
 </script>
 
 
