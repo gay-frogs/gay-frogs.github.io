@@ -16,19 +16,10 @@
 	</body>
 </html>
 <style is:global>
-	:root {
-		--bg: 10, 26, 37;
-		--box-bg: 12, 31, 44;
-		--box-accent: 55, 111, 139;
-		--box-shadow: 18, 37, 46;
-		--text: 204, 200, 185;
-		--subtle-text: 77, 97, 104;
-		--header-text: 53, 111, 139;
-		--emphasis-text: 129, 35, 54;
-	}
+	@import url(../components/start/Theme.css);
 	html {
 		font-family: system-ui, sans-serif;
-		background: #0A1A25;
+		background: var(--main-bg);
 		display: flex;
 		align-items: center;
 		justify-content: center;

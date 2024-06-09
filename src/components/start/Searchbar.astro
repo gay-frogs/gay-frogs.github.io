@@ -8,7 +8,7 @@ import startpage from '../../assets/images/start/startpage.png';
 		<input
 			id="search"
 			type="search"
-			placeholder="Search the web"
+			placeholder="Explore the web"
 			autofocus
 		/>
 		<img
@@ -38,7 +38,7 @@ import startpage from '../../assets/images/start/startpage.png';
 	});
 	function getURL(query: string) {
 		let url;
-		if (query.includes('.') && !query.includes(' ')) {
+		if (query.includes('.') && !query.includes(' ') && (query.indexOf(".") < query.length-2)) {
 			try {
 				url = (new URL(query)).href;
 				return url;
