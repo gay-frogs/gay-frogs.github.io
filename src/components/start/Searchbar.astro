@@ -18,11 +18,43 @@ import startpage from '../../assets/images/start/startpage.png';
 	</div>
 </div>
 <script>
+import type { getAbsoluteLocaleUrl } from "astro:i18n";
+
+	interface StringIndex {
+		[key: string]: any
+	}
+	const searchDictionary:StringIndex = {
+		r: 'https://reddit.com/search/?q=',
+		reddit: 'https://reddit.com/search/?q=',
+		
+		g: 'https://genshin-impact.fandom.com/wiki/Special:Search?query=',
+		genshin: 'https://genshin-impact.fandom.com/wiki/Special:Search?query=',
+
+		w: 'https://en.wikipedia.org/w/index.php?search=',
+		wp: 'https://en.wikipedia.org/w/index.php?search=',
+		wiki: 'https://en.wikipedia.org/w/index.php?search=',
+		wikipedia: 'https://en.wikipedia.org/w/index.php?search=',
+
+		yt: 'https://youtube.com/results?search_query=',
+		youtube: 'https://youtube.com/results?search_query=',
+
+		mozilla: 'https://developer.mozilla.org/en-US/search?q=',
+
+		b: 'https://bsky.app/search?q=',
+		bluesky: 'https://bsky.app/search?q=',
+		bsky: 'https://bsky.app/search?q=',
+	};
+
 	const search = (document.getElementById("search")! as HTMLInputElement)
 	search.addEventListener('keydown', function onEvent(event) {
 		if (event.key === "Enter") {
 			const query = search.value;
-			const url = getURL(query);
+			let url = getURL(query);
+			if (url != null) {
+				window.location.href = url;
+				return;
+			}
+			url = getSpecialSearchURL(query);
 			if (url != null) {
 				window.location.href = url;
 				return;
@@ -47,6 +79,23 @@ import startpage from '../../assets/images/start/startpage.png';
 				url = (new URL("https://" + query)).href;
 				return url;
 			} catch (_) { }
+		}
+		return url;
+	}
+	function getSpecialSearchURL(query: string) {
+		let url;
+		let value = "";
+		for (const key in searchDictionary) {
+			try {
+				value = searchDictionary[key];
+				if (query.includes(key + ':')) {
+					if (query.substring(0, (key.length + 1)) == key + ':') {
+						query = query.substring(key.length+1);
+						if (query.substring(0,1) == " ") { query = query.substring(1); };
+						return (new URL(value + query)).href;
+					}
+				}
+			} catch {console.log("error!")}
 		}
 		return url;
 	}
