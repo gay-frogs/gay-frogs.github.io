@@ -1,5 +1,5 @@
 ---
-import startpage from '../../assets/images/start/startpage.png';
+import duckduckgo from '../../assets/images/start/duckduckgo.png';
 ---
 
 
@@ -12,7 +12,7 @@ import startpage from '../../assets/images/start/startpage.png';
 			autofocus
 		/>
 		<img
-			src={startpage.src}
+			src={duckduckgo.src}
 			alt="Startpage search engine logo"
 		/>
 	</div>
@@ -27,7 +27,6 @@ import type { getAbsoluteLocaleUrl } from "astro:i18n";
 		r: 'https://reddit.com/search/?q=',
 		reddit: 'https://reddit.com/search/?q=',
 		
-		g: 'https://genshin-impact.fandom.com/wiki/Special:Search?query=',
 		genshin: 'https://genshin-impact.fandom.com/wiki/Special:Search?query=',
 
 		w: 'https://en.wikipedia.org/w/index.php?search=',
@@ -40,11 +39,28 @@ import type { getAbsoluteLocaleUrl } from "astro:i18n";
 
 		mozilla: 'https://developer.mozilla.org/en-US/search?q=',
 
-		b: 'https://bsky.app/search?q=',
-		bluesky: 'https://bsky.app/search?q=',
 		bsky: 'https://bsky.app/search?q=',
+		bluesky: 'https://bsky.app/search?q=',
 
 		steam: 'https://store.steampowered.com/search/?term=',
+
+		ddg: 'https://duckduckgo.com/?t=ffab&q=',
+		duckduckgo: 'https://duckduckgo.com/?t=ffab&q=',
+
+		g: 'https://www.google.com/search?q=',
+		google: 'https://www.google.com/search?q=',
+
+		q: 'https://www.qwant.com/?q=',
+		qwant: 'https://www.qwant.com/?q=',
+
+		s: 'https://www.startpage.com/sp/search?query=',
+		sp: 'https://www.startpage.com/sp/search?query=',
+		stp: 'https://www.startpage.com/sp/search?query=',
+		start: 'https://www.startpage.com/sp/search?query=',
+		startpage: 'https://www.startpage.com/sp/search?query=',
+
+		b: 'https://www.bing.com/search?q=',
+		bing: 'https://www.bing.com/search?q=',
 	};
 
 	const search = (document.getElementById("search")! as HTMLInputElement)
@@ -66,7 +82,7 @@ import type { getAbsoluteLocaleUrl } from "astro:i18n";
 				return
 			}
 			try {
-				window.location.href = ("https://www.startpage.com/sp/search?query=" + searchQuery);
+				window.location.href = ("https://duckduckgo.com/?t=ffab&q=" + searchQuery);
 			} catch (e){}
 		}
 	});
